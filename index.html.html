@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evolved Potential Sports Therapy – Josh | Coolum &amp; Surrounds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #141210;
+  --sand: #f4efe6;
+  --warm: #c09a6a;
+  --deep: #1e1a16;
+  --moss: #3d4a38;
+  --accent: #a87840;
+  --mid: #e8e2d8;
+  --muted: #5a5248;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--sand);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* ───── HERO ───── */
+.hero {
+  min-height: 100svh;
+  background: var(--deep);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+.hero-bg-lines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(90deg, rgba(192,154,106,0.04) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(192,154,106,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.hero-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(192,154,106,0.12) 0%, transparent 70%);
+  top: -100px;
+  right: -100px;
+  pointer-events: none;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 32px 40px;
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+  width: 100%;
+  gap: 0;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 36px;
+  opacity: 0;
+  animation: riseIn 0.7s 0.1s ease forwards;
+}
+.hero-eyebrow-line { width: 32px; height: 1px; background: var(--warm); }
+.hero-eyebrow span {
+  font-size: 10px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--warm);
+  font-weight: 500;
+}
+
+/* Photo + heading side by side on larger screens */
+.hero-main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.hero-photo-wrap {
+  opacity: 0;
+  animation: riseIn 0.8s 0.2s ease forwards;
+  flex-shrink: 0;
+}
+
+.hero-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid rgba(192,154,106,0.4);
+  display: block;
+}
+
+.hero-text { flex: 1; }
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 13vw, 96px);
+  font-weight: 300;
+  color: var(--sand);
+  line-height: 0.92;
+  opacity: 0;
+  animation: riseIn 0.8s 0.25s ease forwards;
+}
+.hero-title em { font-style: italic; color: var(--warm); display: block; }
+
+.hero-name-block {
+  margin-top: 24px;
+  opacity: 0;
+  animation: riseIn 0.8s 0.4s ease forwards;
+}
+.hero-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: rgba(244,239,230,0.9);
+}
+.hero-role {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--warm);
+  margin-top: 4px;
+}
+
+.hero-desc {
+  margin-top: 20px;
+  font-size: 14px;
+  color: rgba(244,239,230,0.55);
+  line-height: 1.85;
+  max-width: 400px;
+  opacity: 0;
+  animation: riseIn 0.8s 0.5s ease forwards;
+}
+
+.hero-actions {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  opacity: 0;
+  animation: riseIn 0.8s 0.6s ease forwards;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--warm);
+  color: var(--deep);
+  padding: 15px 26px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.22s, transform 0.22s;
+}
+.btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
+.btn-primary svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(192,154,106,0.35);
+  color: rgba(244,239,230,0.7);
+  padding: 15px 26px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: border-color 0.22s, color 0.22s;
+}
+.btn-ghost:hover { border-color: var(--warm); color: var(--warm); }
+
+.hero-bottom {
+  border-top: 1px solid rgba(192,154,106,0.12);
+  padding: 24px 32px;
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+  width: 100%;
+}
+.hero-stat { display: flex; flex-direction: column; gap: 3px; }
+.hero-stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--warm);
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(244,239,230,0.4);
+}
+
+/* ───── SPOTS BAND ───── */
+.spots-band {
+  background: var(--moss);
+  color: var(--sand);
+  padding: 26px 32px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.spots-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 64px;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--warm);
+  flex-shrink: 0;
+}
+.spots-copy strong { display: block; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+.spots-copy p { font-size: 13px; opacity: 0.7; line-height: 1.6; }
+
+/* ───── SECTION SHARED ───── */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+.section-label span {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.section-label::before, .section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(26,22,18,0.12);
+}
+
+.section {
+  padding: 80px 32px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.section-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 8vw, 58px);
+  font-weight: 300;
+  line-height: 1.05;
+  margin-bottom: 28px;
+}
+.section-heading em { font-style: italic; color: var(--accent); }
+
+/* ───── ABOUT ───── */
+.about-wrap { background: var(--sand); }
+.about-body { font-size: 15px; line-height: 1.9; color: var(--muted); }
+.about-body p + p { margin-top: 16px; }
+
+.credentials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 24px 0;
+}
+.cred-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  border: 1px solid rgba(26,22,18,0.08);
+  padding: 12px 16px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.4;
+}
+.cred-icon { font-size: 16px; flex-shrink: 0; }
+.cred-more {
+  grid-column: 1 / -1;
+  background: var(--mid);
+  color: var(--muted);
+  font-style: italic;
+}
+.about-close {
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* ───── SERVICES ───── */
+.services-wrap { background: var(--mid); }
+.services-wrap .section-label::before,
+.services-wrap .section-label::after { background: rgba(26,22,18,0.1); }
+
+.service-list { display: flex; flex-direction: column; gap: 2px; }
+.service-item {
+  background: var(--sand);
+  padding: 26px 28px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  transition: background 0.18s;
+  cursor: default;
+}
+.service-item:hover { background: white; }
+.service-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--warm);
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+.service-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+.service-desc { font-size: 13px; line-height: 1.75; color: var(--muted); }
+
+/* ───── REVIEW ───── */
+.review-wrap { background: var(--deep); color: var(--sand); }
+.review-wrap .section-label::before,
+.review-wrap .section-label::after { background: rgba(244,239,230,0.1); }
+.review-wrap .section-label span { color: var(--warm); }
+
+.review-google-badge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(192,154,106,0.2);
+  padding: 16px 20px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+.review-google-info { flex: 1; min-width: 100px; }
+.review-google-stars { font-size: 15px; color: #fbbc05; font-weight: 500; }
+.review-google-score { color: var(--sand); font-size: 14px; font-weight: 400; }
+.review-google-count { font-size: 12px; color: rgba(244,239,230,0.45); margin-top: 2px; }
+.review-google-link {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--warm);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(192,154,106,0.3);
+  padding-bottom: 1px;
+  white-space: nowrap;
+  transition: border-color 0.2s;
+}
+.review-google-link:hover { border-color: var(--warm); }
+
+.review-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+@media (min-width: 560px) {
+  .review-grid { grid-template-columns: 1fr 1fr; }
+  .review-card--featured { grid-column: 1 / -1; }
+}
+
+.review-card {
+  border: 1px solid rgba(192,154,106,0.14);
+  padding: 28px 28px 30px;
+  position: relative;
+  background: rgba(255,255,255,0.02);
+  transition: background 0.2s;
+}
+.review-card:hover { background: rgba(255,255,255,0.05); }
+.review-card--featured {
+  background: rgba(192,154,106,0.07);
+  border-color: rgba(192,154,106,0.28);
+}
+.review-card::before {
+  content: '\201C';
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 100px;
+  line-height: 1;
+  color: rgba(192,154,106,0.1);
+  position: absolute;
+  top: 8px;
+  left: 20px;
+  pointer-events: none;
+}
+.review-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(16px, 3.5vw, 20px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.65;
+  color: rgba(244,239,230,0.88);
+  position: relative;
+  z-index: 1;
+  margin-bottom: 22px;
+}
+.review-author { display: flex; flex-direction: column; gap: 2px; }
+.review-author-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--warm);
+  letter-spacing: 0.05em;
+}
+.review-author-role { font-size: 12px; opacity: 0.5; letter-spacing: 0.04em; }
+
+.stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 16px;
+}
+.stars span { color: #fbbc05; font-size: 13px; }
+
+/* ───── PRICING ───── */
+.pricing-wrap { background: var(--sand); }
+
+.price-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 560px) {
+  .price-cards { grid-template-columns: repeat(3, 1fr); }
+}
+.price-card {
+  border: 1px solid rgba(26,22,18,0.1);
+  background: white;
+  padding: 32px 28px;
+  position: relative;
+}
+.price-card--featured {
+  background: var(--ink);
+  border-color: transparent;
+}
+.price-card--featured .price-tag { color: var(--warm); }
+.price-card--featured .price-duration { color: rgba(244,239,230,0.75); }
+.price-card--featured .price-amount { color: var(--warm); }
+.price-card--featured .price-includes li { color: rgba(244,239,230,0.6); }
+.price-card--featured .price-includes li::before { color: var(--warm); }
+.price-tag {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.price-duration {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 300;
+  margin-bottom: 6px;
+}
+.price-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 72px;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.price-amount sup { font-size: 28px; vertical-align: super; }
+.price-includes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.price-includes li {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+  padding-left: 16px;
+  position: relative;
+}
+.price-includes li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--warm);
+}
+.price-note {
+  font-size: 12px;
+  color: #999;
+  line-height: 1.7;
+  padding-top: 20px;
+  border-top: 1px solid rgba(26,22,18,0.08);
+}
+
+/* ───── AREAS ───── */
+.areas-wrap { background: var(--mid); }
+.areas-wrap .section-label::before,
+.areas-wrap .section-label::after { background: rgba(26,22,18,0.1); }
+
+.area-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.area-tag {
+  padding: 8px 16px;
+  border: 1px solid rgba(26,22,18,0.16);
+  font-size: 12px;
+  background: white;
+  letter-spacing: 0.04em;
+}
+
+/* ───── CTA / CONTACT ───── */
+.contact-wrap {
+  background: var(--warm);
+  padding: 80px 32px;
+}
+.contact-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.contact-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 10vw, 68px);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--deep);
+  margin-bottom: 12px;
+}
+.contact-heading em { font-style: italic; }
+.contact-sub {
+  font-size: 14px;
+  color: var(--deep);
+  opacity: 0.7;
+  margin-bottom: 48px;
+  line-height: 1.7;
+  max-width: 380px;
+}
+.contact-methods { display: flex; flex-direction: column; gap: 20px; }
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: var(--deep);
+  padding: 18px 24px;
+  background: rgba(30,26,22,0.08);
+  transition: background 0.18s;
+}
+.contact-method:hover { background: rgba(30,26,22,0.15); }
+.contact-method-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.contact-method-icon svg {
+  width: 16px; height: 16px;
+  stroke: var(--warm); fill: none;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+.contact-method-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.6; margin-bottom: 2px; }
+.contact-method-value { font-size: 16px; font-weight: 400; }
+
+.footer-bar {
+  background: var(--deep);
+  padding: 20px 32px;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(244,239,230,0.3);
+}
+
+/* ───── CONDITIONS ───── */
+.conditions-wrap { background: var(--deep); color: var(--sand); }
+.conditions-wrap .section-label::before,
+.conditions-wrap .section-label::after { background: rgba(244,239,230,0.1); }
+.conditions-wrap .section-label span { color: var(--warm); }
+.conditions-wrap .section-heading { color: var(--sand); }
+.conditions-wrap .section-heading em { color: var(--warm); }
+
+.conditions-intro {
+  font-size: 14px;
+  line-height: 1.85;
+  color: rgba(244,239,230,0.6);
+  margin-bottom: 36px;
+  max-width: 480px;
+}
+
+.conditions-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 560px) {
+  .conditions-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .condition-card--wide {
+    grid-column: 1 / -1;
+  }
+}
+
+.condition-card {
+  border: 1px solid rgba(192,154,106,0.15);
+  padding: 28px 28px 32px;
+  background: rgba(255,255,255,0.03);
+  transition: background 0.2s;
+}
+.condition-card:hover { background: rgba(255,255,255,0.06); }
+
+.condition-card--wide .condition-wide-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 560px) {
+  .condition-card--wide .condition-wide-body {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.condition-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.condition-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(192,154,106,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.condition-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--warm);
+}
+
+.condition-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--sand);
+  line-height: 1.2;
+}
+
+.condition-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.condition-list li {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(244,239,230,0.65);
+  padding-left: 16px;
+  position: relative;
+}
+.condition-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--warm);
+  opacity: 0.6;
+}
+
+.condition-note {
+  font-size: 13px;
+  line-height: 1.8;
+  color: rgba(244,239,230,0.45);
+  font-style: italic;
+  padding-top: 4px;
+}
+
+/* ───── RESPONSIVE ───── */
+@media (min-width: 560px) {
+  .hero-main { flex-direction: row; align-items: center; }
+  .hero-photo { width: 150px; height: 150px; }
+}
+
+@media (min-width: 700px) {
+  .hero-content, .section, .contact-inner { padding-left: 48px; padding-right: 48px; }
+  .hero-bottom { padding-left: 48px; padding-right: 48px; }
+  .spots-band { padding-left: 48px; padding-right: 48px; }
+  .contact-wrap { padding-left: 48px; padding-right: 48px; }
+  .contact-methods { flex-direction: row; }
+  .contact-method { flex: 1; }
+}
+
+/* ───── ANIMATIONS ───── */
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<header class="hero">
+  <div class="hero-bg-lines"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span>Evolved Potential Sports Therapy</span>
+    </div>
+    <div class="hero-main">
+      <div class="hero-photo-wrap">
+        <img class="hero-photo" src="data:image/png;base64,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" alt="Josh – Evolved Potential Sports Therapy">
+      </div>
+      <div class="hero-text">
+        <h1 class="hero-title">
+          Recover.<br><em>Perform.</em>
+        </h1>
+        <div class="hero-name-block">
+          <div class="hero-name">Josh</div>
+          <div class="hero-role">Remedial Massage Therapist · Coolum &amp; Surrounds</div>
+        </div>
+      </div>
+    </div>
+    <p class="hero-desc">Elite-level sports remedial massage, delivered to your home. The same standard of care I bring to professional athletes — now available to you.</p>
+    <div class="hero-actions">
+      <a href="tel:0483780551" class="btn-primary">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.59a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call to Book
+      </a>
+      <a href="#contact" class="btn-ghost">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-bottom">
+    <div class="hero-stat">
+      <div class="hero-stat-num">10</div>
+      <div class="hero-stat-label">Spots Available</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">$110–$190</div>
+      <div class="hero-stat-label">Per Session</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">Mobile</div>
+      <div class="hero-stat-label">Comes To You</div>
+    </div>
+  </div>
+</header>
+
+<!-- ── SPOTS BAND ── -->
+<div class="spots-band reveal">
+  <div class="spots-num">10</div>
+  <div class="spots-copy">
+    <strong>10 new client spots available now</strong>
+    <p>Taking on a select group of home-based clients. Once full, the waitlist opens — don't miss out.</p>
+  </div>
+</div>
+
+<!-- ── ABOUT ── -->
+<div class="about-wrap">
+  <div class="section reveal">
+    <div class="section-label"><span>About Josh</span></div>
+    <h2 class="section-heading">Sports-grade care,<br><em>at your door.</em></h2>
+    <div class="about-body">
+      <p>I've built my career working with multi-elite athletes across professional sports at the highest levels — understanding how bodies move under load, how they break down, and how to get them performing again fast.</p>
+      <p>My work has taken me across rugby union, swimming, combat sports, dance performance and more. Teams and programs I've worked with include:</p>
+    </div>
+    <div class="credentials-grid">
+      <div class="cred-item"><span class="cred-icon">🏉</span><span>Wallabies</span></div>
+      <div class="cred-item"><span class="cred-icon">🏉</span><span>All Blacks</span></div>
+      <div class="cred-item"><span class="cred-icon">🏉</span><span>Springboks</span></div>
+      <div class="cred-item"><span class="cred-icon">🏊</span><span>USC Swim Squad / Elite Swimmers</span></div>
+      <div class="cred-item"><span class="cred-icon">🥊</span><span>MMA &amp; Muay Thai Athletes</span></div>
+      <div class="cred-item"><span class="cred-icon">🩰</span><span>Queensland Ballet</span></div>
+      <div class="cred-item cred-more"><span class="cred-icon">✦</span><span>And many more</span></div>
+    </div>
+    <p class="about-close">That depth of knowledge doesn't stay in the gym. With Evolved Potential Sports Therapy, I bring the same assessment rigour directly to your home. No clinic, no waiting room — just focused, effective treatment where you're most comfortable.</p>
+  </div>
+</div>
+
+<!-- ── SERVICES ── -->
+<div class="services-wrap">
+  <div class="section reveal">
+    <div class="section-label"><span>Treatment</span></div>
+    <h2 class="section-heading">What I<br><em>treat.</em></h2>
+    <div class="service-list">
+      <div class="service-item">
+        <div class="service-dot"></div>
+        <div>
+          <div class="service-name">Remedial Massage</div>
+          <div class="service-desc">Targeted soft tissue therapy addressing specific dysfunctions, injury sites, and chronic tension patterns.</div>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-dot"></div>
+        <div>
+          <div class="service-name">Sports Recovery</div>
+          <div class="service-desc">Post-training and post-competition muscle flushing, DOMS management, and return-to-load preparation.</div>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-dot"></div>
+        <div>
+          <div class="service-name">Injury Rehabilitation</div>
+          <div class="service-desc">Structural soft tissue work supporting return-to-sport timelines, alongside your physio or medical team.</div>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-dot"></div>
+        <div>
+          <div class="service-name">Deep Tissue &amp; Trigger Point</div>
+          <div class="service-desc">High-pressure fascial work for entrenched restrictions, postural issues, and neuromuscular referral patterns.</div>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-dot"></div>
+        <div>
+          <div class="service-name">Maintenance &amp; Prevention</div>
+          <div class="service-desc">Regular scheduled sessions to maintain tissue quality, mobility, and resilience across training cycles.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONDITIONS ── -->
+<div class="conditions-wrap">
+  <div class="section reveal">
+    <div class="section-label"><span>Who I Help</span></div>
+    <h2 class="section-heading">Whether you're an<br><em>elite athlete</em><br>or just hurting.</h2>
+    <p class="conditions-intro">I work across the full spectrum — from professional athletes managing performance demands, to everyday people dealing with pain that's been building for years. If your body isn't working the way it should, this is for you.</p>
+    <div class="conditions-grid">
+
+      <div class="condition-card">
+        <div class="condition-header">
+          <div class="condition-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <div class="condition-title">Elite Athletes &amp; Sports Injuries</div>
+        </div>
+        <ul class="condition-list">
+          <li>Sports performance recovery &amp; load management</li>
+          <li>Acute and chronic sports injuries</li>
+          <li>Return-to-sport soft tissue rehabilitation</li>
+          <li>Pre- &amp; post-operative rehabilitation</li>
+          <li>Swelling and inflammation management</li>
+        </ul>
+      </div>
+
+      <div class="condition-card">
+        <div class="condition-header">
+          <div class="condition-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </div>
+          <div class="condition-title">Everyday Aches &amp; Tension</div>
+        </div>
+        <ul class="condition-list">
+          <li>General muscular tightness and tension</li>
+          <li>Work-related postural strain</li>
+          <li>Stress-held tension patterns</li>
+          <li>Fatigue and physical exhaustion</li>
+        </ul>
+      </div>
+
+      <div class="condition-card condition-card--wide">
+        <div class="condition-header">
+          <div class="condition-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="condition-title">Chronic Pain &amp; Complex Presentations</div>
+        </div>
+        <div class="condition-wide-body">
+          <ul class="condition-list">
+            <li>Lower back pain &amp; spasms</li>
+            <li>Headaches &amp; migraines</li>
+            <li>Neck &amp; shoulder dysfunction</li>
+            <li>Long-standing unresolved pain</li>
+            <li>Referred pain &amp; nerve-related tightness</li>
+          </ul>
+          <p class="condition-note">Chronic and complex issues are a particular focus. I take the time to properly assess what's driving the problem — not just treat the symptom.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── REVIEW ── -->
+<div class="review-wrap">
+  <div class="section reveal">
+    <div class="section-label"><span>What Clients Say</span></div>
+
+    <div class="review-google-badge">
+      <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+      <div class="review-google-info">
+        <div class="review-google-stars">★★★★★ <span class="review-google-score">5.0</span></div>
+        <div class="review-google-count">15 Google reviews</div>
+      </div>
+      <a href="https://www.google.com/search?q=the+evolved+potential+remedial+sports+massage" target="_blank" class="review-google-link">See all reviews ↗</a>
+    </div>
+
+    <div class="review-grid">
+
+      <div class="review-card review-card--featured">
+        <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="review-text">Josh is a very intuitive, knowledgeable therapist who provides excellent, individualised treatment to his clients. He has helped our dancers with recovery and performance, and goes above and beyond to understand the needs and requirements of their bodies to perform at a professional level. Highly recommend.</p>
+        <div class="review-author">
+          <div class="review-author-name">Michelle White</div>
+          <div class="review-author-role">Head of Performance — Queensland Ballet</div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="review-text">Josh is very knowledgeable and has helped me out with my muscle tightness and post knee surgery therapy. He really knows his stuff!</p>
+        <div class="review-author">
+          <div class="review-author-name">Google Review</div>
+          <div class="review-author-role">Verified Client</div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="review-text">Joshua offered a bespoke and considerate approach to working through my pains and niggles, and guidance for mobility work I can do at home. He made me feel comfortable and heard.</p>
+        <div class="review-author">
+          <div class="review-author-name">Google Review</div>
+          <div class="review-author-role">Verified Client</div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="review-text">He is super knowledgeable and breaks information down for you to improve comprehension. Like someone from my CrossFit said when recommending Joshua — "he really knows his stuff!"</p>
+        <div class="review-author">
+          <div class="review-author-name">Google Review</div>
+          <div class="review-author-role">Verified Client</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── PRICING ── -->
+<div class="pricing-wrap">
+  <div class="section reveal">
+    <div class="section-label"><span>Investment</span></div>
+    <h2 class="section-heading">Simple,<br><em>transparent</em><br>pricing.</h2>
+    <div class="price-cards">
+      <div class="price-card">
+        <div class="price-tag">Express</div>
+        <div class="price-duration">45 minutes</div>
+        <div class="price-amount"><sup>$</sup>110</div>
+        <ul class="price-includes">
+          <li>Targeted single-area treatment</li>
+          <li>Pre or post-event focus</li>
+          <li>Maintenance tune-up</li>
+        </ul>
+      </div>
+      <div class="price-card price-card--featured">
+        <div class="price-tag">Most Popular</div>
+        <div class="price-duration">60 minutes</div>
+        <div class="price-amount"><sup>$</sup>140</div>
+        <ul class="price-includes">
+          <li>Full assessment &amp; treatment</li>
+          <li>Ideal for ongoing clients</li>
+          <li>Recommended for first sessions</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="price-tag">Comprehensive</div>
+        <div class="price-duration">90 minutes</div>
+        <div class="price-amount"><sup>$</sup>190</div>
+        <ul class="price-includes">
+          <li>Full body treatment</li>
+          <li>Complex presentations</li>
+          <li>Head-to-toe attention</li>
+        </ul>
+      </div>
+    </div>
+    <p class="price-note" style="margin-top:16px;">All sessions delivered to your home. Mobile travel fee may apply. Health fund rebates available — HICAPS on request. Ask about package rates for regular bookings.</p>
+  </div>
+</div>
+
+<!-- ── AREAS ── -->
+<div class="areas-wrap">
+  <div class="section reveal">
+    <div class="section-label"><span>Service Area</span></div>
+    <h2 class="section-heading">Where<br><em>I travel.</em></h2>
+    <p style="font-size:14px; color:var(--muted); line-height:1.8; margin-bottom:28px;">Based in Coolum Beach and travelling to surrounding areas on the Sunshine Coast. Not on the list? Reach out — happy to discuss.</p>
+    <div class="area-tags">
+      <span class="area-tag">Coolum Beach</span>
+      <span class="area-tag">Peregian Beach</span>
+      <span class="area-tag">Yaroomba</span>
+      <span class="area-tag">Marcus Beach</span>
+      <span class="area-tag">Noosa Heads</span>
+      <span class="area-tag">Noosaville</span>
+      <span class="area-tag">Marcoola</span>
+      <span class="area-tag">Mudjimba</span>
+      <span class="area-tag">Twin Waters</span>
+      <span class="area-tag">Bli Bli</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONTACT ── -->
+<div class="contact-wrap" id="contact">
+  <div class="contact-inner">
+    <h2 class="contact-heading">Book your<br><em>first session.</em></h2>
+    <p class="contact-sub">10 spots available. Drop me a call or text to lock yours in. I'll get back to you promptly.</p>
+    <div class="contact-methods">
+      <a href="tel:0483780551" class="contact-method">
+        <div class="contact-method-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.59a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div>
+          <div class="contact-method-label">Call or Text</div>
+          <div class="contact-method-value">0483 780 551</div>
+        </div>
+      </a>
+      <a href="sms:0483780551" class="contact-method">
+        <div class="contact-method-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div>
+          <div class="contact-method-label">Send a Message</div>
+          <div class="contact-method-value">Tap to SMS</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="footer-bar">
+  Evolved Potential Sports Therapy · Coolum Beach, QLD · By Appointment Only
+</div>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
